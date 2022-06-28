@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
 import { Routing } from './enums';
 import About from './pages/about/About';
