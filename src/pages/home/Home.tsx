@@ -32,6 +32,7 @@ const Home = () => {
 						className="mb-4 h-32 border p-3"
 						placeholder="Ex: Looking to split a 60 - 80 m² apartment with 1 other person in Paris"
 					></textarea>
+
 					<button
 						type="submit"
 						className="h-9 w-32 self-end rounded border"
