@@ -1,10 +1,27 @@
 import axios from 'axios';
 
+import { ExplorationPost } from '../models/models';
+
 class Api {
 	private BASE_URL = 'http://localhost:4000';
 
-	async createPost(post: string) {
-		return await axios.post(`${this.BASE_URL}/posts`, { post });
+	async getPosts(): Promise<ExplorationPost[]> {
+		const response = await axios.get<ExplorationPost[]>(
+			`${this.BASE_URL}/exploration-posts`,
+		);
+
+		return response.data;
+	}
+
+	async createPost(post: string): Promise<ExplorationPost['id']> {
+		const response = await axios.post<ExplorationPost['id']>(
+			`${this.BASE_URL}/exploration-posts`,
+			{
+				post,
+			},
+		);
+
+		return response.data;
 	}
 }
 
