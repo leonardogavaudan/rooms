@@ -39,6 +39,14 @@ const Login = () => {
 					<div className="flex justify-end">
 						<a
 							href="#"
+							className="mb-1 text-sm text-gray-800 hover:text-gray-600 hover:underline"
+						>
+							Register
+						</a>
+					</div>
+					<div className="flex justify-end">
+						<a
+							href="#"
 							className="mb-6 text-sm text-gray-800 hover:text-gray-600 hover:underline"
 						>
 							Forgot your password?

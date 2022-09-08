@@ -23,6 +23,24 @@ class Api {
 
 		return response.data;
 	}
+
+	async login(username: string, password: string): Promise<string> {
+		const response = await axios.post<string>(`${this.BASE_URL}/login`, {
+			username,
+			password,
+		});
+
+		return response.data;
+	}
+
+	async register(username: string, password: string): Promise<string> {
+		const response = await axios.post<string>(`${this.BASE_URL}/register`, {
+			username,
+			password,
+		});
+
+		return response.data;
+	}
 }
 
 export default Api;
