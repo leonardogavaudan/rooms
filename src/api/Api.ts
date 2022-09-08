@@ -17,7 +17,7 @@ class Api {
 		const response = await axios.post<ExplorationPost['id']>(
 			`${this.BASE_URL}/exploration-posts`,
 			{
-				post,
+				content: post,
 			},
 		);
 

@@ -12,16 +12,19 @@ const Home = () => {
 
 	useEffect(() => {
 		api.getPosts().then((posts) => {
+			console.log(posts);
 			setPosts(posts.map((post) => post.content));
 		});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	const handleNewPost = async (event: React.MouseEvent) => {
+	const handleSubmitNewPost = async (
+		event: React.FormEvent<HTMLFormElement>,
+	): Promise<void> => {
 		event.preventDefault();
-		const postCreated = await api.createPost(newPost);
+		const postCreatedId = await api.createPost(newPost);
 
-		if (postCreated) {
+		if (postCreatedId) {
 			setPosts([...posts, newPost]);
 			setNewPost('');
 		}
@@ -34,7 +37,7 @@ const Home = () => {
 			<NewPostSection
 				newPost={newPost}
 				handleOnChange={(e) => setNewPost(e.target.value)}
-				handleOnClick={handleNewPost}
+				handleOnSubmit={handleSubmitNewPost}
 			/>
 
 			<div>

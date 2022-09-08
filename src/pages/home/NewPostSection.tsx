@@ -1,19 +1,19 @@
 interface NewPostSectionProps {
 	newPost: string;
 	handleOnChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-	handleOnClick: (event: React.MouseEvent) => void;
+	handleOnSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
 const NewPostSection = ({
 	newPost,
 	handleOnChange,
-	handleOnClick,
+	handleOnSubmit,
 }: NewPostSectionProps) => {
 	return (
 		<div>
 			<div className="mb-3">{`Write here to share you're looking for:`}</div>
 
-			<form className="flex w-[35rem] flex-col">
+			<form className="flex w-[35rem] flex-col" onSubmit={handleOnSubmit}>
 				<textarea
 					value={newPost}
 					onChange={handleOnChange}
@@ -21,11 +21,7 @@ const NewPostSection = ({
 					placeholder="Ex: Looking to split a 60 - 80 m² apartment with 1 other person in Paris"
 				></textarea>
 
-				<button
-					type="submit"
-					className="h-9 w-32 self-end rounded border"
-					onClick={handleOnClick}
-				>
+				<button type="submit" className="h-9 w-32 self-end rounded border">
 					Post
 				</button>
 			</form>
