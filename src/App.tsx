@@ -9,18 +9,16 @@ import { Register } from './pages/register/Register';
 
 const App = () => {
 	return (
-		<div>
-			<BrowserRouter>
-				<Navbar />
+		<BrowserRouter>
+			<Navbar />
 
-				<Routes>
-					<Route path={Routing.HOME} element={<Home />} />
-					<Route path={Routing.ABOUT} element={<About />} />
-					<Route path={Routing.LOGIN} element={<Login />} />
-					<Route path={Routing.REGISTER} element={<Register />} />
-				</Routes>
-			</BrowserRouter>
-		</div>
+			<Routes>
+				<Route path={Routing.HOME} element={<Home />} />
+				<Route path={Routing.ABOUT} element={<About />} />
+				<Route path={Routing.LOGIN} element={<Login />} />
+				<Route path={Routing.REGISTER} element={<Register />} />
+			</Routes>
+		</BrowserRouter>
 	);
 };
 
